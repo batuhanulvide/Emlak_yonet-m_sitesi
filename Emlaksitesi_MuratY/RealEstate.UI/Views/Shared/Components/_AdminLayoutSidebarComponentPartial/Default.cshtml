@@ -1,0 +1,51 @@
+﻿<div class="sidebar pe-4 pb-3">
+    <nav class="navbar bg-light navbar-light">
+        <a href="#" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Real Estate</h3>
+        </a>
+        <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+                @if (ViewBag.LoginProfileImage is null)
+                {
+                    <img class="rounded-circle" src="~/user.png" alt="" style="width: 40px; height: 40px;">
+                }
+                else
+                {
+                    <img class="rounded-circle" src="@ViewBag.LoginProfileImage" alt="" style="width: 40px; height: 40px;">
+                }
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="ms-3">
+                <h6 class="mb-0">Admin Paneli</h6>
+                <span>@ViewBag.LoginUserName</span>
+            </div>
+        </div>
+        <div class="navbar-nav w-100">
+            <a asp-controller="Dashboard" asp-action="Index" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <a asp-controller="Statistics" asp-action="Index" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>İstatistikler</a>
+            <a asp-controller="Profile" asp-action="UpdateProfile" class="nav-item nav-link"><i class="fa fa-cog me-2"></i>Ayarlar</a>
+            <div class="nav-item dropdown">
+                <a href="#" style="color:black;" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-envelope me-2"></i>Mail İşlemleri</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="/Message/InBox/" class="dropdown-item">Gelen Kutusu</a>
+                    <a href="/Message/SendBox/" class="dropdown-item">Gönderilen Mesajlar</a>
+                    <a href="/Message/CreateMessage/" class="dropdown-item">Yeni Mesaj</a>
+                </div>
+            </div>
+            <a asp-controller="Contact" asp-action="AdminContactList" class="nav-item nav-link"><i class="fa fa-inbox me-2"></i>Gelen Mesajlar</a>
+            <a asp-controller="Category" asp-action="Index" class="nav-item nav-link"><i class="fa fa-layer-group me-2"></i>Kategoriler</a>
+            <a asp-controller="Product" asp-action="Index" class="nav-item nav-link"><i class="fa fa-th me-2"></i>İlanlar</a>
+            <a asp-controller="ProductImage" asp-action="Index" class="nav-item nav-link"><i class="fa fa-image me-2"></i>İlan Görselleri</a>
+            <a asp-controller="AppUser" asp-action="Index" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Kullanıcılar</a>
+            <a asp-controller="WhoWeAreDetail" asp-action="Index" class="nav-item nav-link"><i class="fa fa-puzzle-piece me-2"></i>Biz Kimiz</a>
+            <a asp-controller="Service" asp-action="Index" class="nav-item nav-link"><i class="fa fa-university me-2"></i>Hizmetler</a>
+            <a asp-controller="BottomGrid" asp-action="Index" class="nav-item nav-link"><i class="fa fa-star me-2"></i>Öne Çıkanlar</a>
+            <a asp-controller="PopularLocation" asp-action="Index" class="nav-item nav-link"><i class="fa fa-map-marker me-2"></i>Lokasyonlar</a>
+            <a asp-controller="Address" asp-action="UpdateAddress" class="nav-item nav-link"><i class="fa fa-phone me-2"></i>İletişim Bilgileri</a>
+            <a asp-controller="ToDoList" asp-action="Index" class="nav-item nav-link"><i class="fa fa-bars me-2"></i>Görevler</a>
+            <a asp-controller="Default" asp-action="Index" class="nav-item nav-link"><i class="fa fa-home me-2"></i>Siteye Git</a>
+            <a asp-controller="Login" asp-action="Logout" class="nav-item nav-link"><i class="fa fa-times me-2"></i>Çıkış Yap</a>
+
+        </div>
+    </nav>
+</div>

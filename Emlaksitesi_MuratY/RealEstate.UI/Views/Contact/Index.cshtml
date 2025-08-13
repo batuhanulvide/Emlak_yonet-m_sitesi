@@ -1,0 +1,56 @@
+﻿@model CreateContactDto
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Default/Index/">Ana Sayfa</a></li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> Bize Yazın</li>
+        </ul>
+    </div>
+</section>
+
+<section class="w3l-contact-7 pt-5" id="contact">
+    <div class="contacts-9 pt-lg-5 pt-md-4">
+        <div class="container">
+            <div class="top-map">
+                <div class="row map-content-9">
+                    <div class="col-lg-8">
+                        <div class="contact-form">
+                            <h5 class="mb-2">Bize Ulaşın</h5>
+                            <form method="post" class="">
+                                <div class="form-grid">
+                                    <div class="input-field">
+                                        <input type="text" name="Name" id="w3lName" placeholder="Adınız"
+                                               required="">
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="email" name="Email" id="w3lSender" placeholder="E-Mail"
+                                               required="">
+                                    </div>
+                                </div>
+                                <div class="input-field mt-4">
+                                    <div class="input-field mb-4">
+                                        <input type="text" name="Subject" id="w3lSender" placeholder="Konu"
+                                               required="">
+                                    </div>
+                                    <textarea name="Message" id="w3lMessage" placeholder="Mesaj"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-style mt-3">Gönder</button>
+                            </form>
+                        </div>
+                    </div>
+                    @await Component.InvokeAsync("_ContactAddressComponentPartial")
+                </div>
+            </div>
+        </div>
+        <div class="map mt-5">
+            <iframe src="@ViewBag.locationMap"
+                    frameborder="0" style="border:0" allowfullscreen=""></iframe>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+﻿@model GetAppUserByProductIdDto
+
+<div class="sidebar-side col-lg-4 col-md-12 col-sm-12 mt-lg-0 mt-5">
+    <aside class="sidebar">
+
+        <!-- Popular Post Widget-->
+        <div class="sidebar-widget popular-posts">
+            <div class="sidebar-title">
+                <h4>Emlakçı İletişim Bilgileri</h4>
+            </div>
+
+            <article class="post">
+                <figure class="post-thumb">
+                    <img src="@Model.UserImageUrl" style="width:100px;height:100px;" class="radius-image" alt="">
+                </figure>
+                <div class="text mb-0">
+                    <a href="#blog-single">
+                        @Model.Name
+                    </a>
+                    <div class="post-info">@Model.PhoneNumber</div>
+                    <div class="post-info">@Model.Email</div>
+                </div>
+            </article>
+            <a href="mailto:@Model.Email" class="btn btn-primary btn-style w-100">İletişime Geç</a>
+        </div>
+
+
+        <!-- Popular Post Widget-->
+
+        @* İlan detay sayfasinda o ilani hangi kullanici yayinlamissa ilgili kullanicinin yayinladigi diger 3 ilan *@
+        @await Component.InvokeAsync("_Last3ActiveProductByUserIdComponentPartial", new { id = Model.UserId })
+
+    </aside>
+</div>
